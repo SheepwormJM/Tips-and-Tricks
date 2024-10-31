@@ -26,3 +26,12 @@ sed 's/\t\+/\t/g' header_ratio > header_new
 # Replace two or more spaces with a single tab:
 sed 's/ \+/\t/g' header_ratio > header_new
 ```
+
+## Obtain just certain columns quickly using cut
+
+Note that it sees a tab at the start of a line as a column, even though using awk '{print NF}' does not....
+```
+cut -f 1-29 file > tmp_rank_cols
+cut -f 28-30 file > tmp_pi_cols
+cut -f 28-29,31- file > tmp_ratio_cols
+```
