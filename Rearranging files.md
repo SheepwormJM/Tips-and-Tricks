@@ -18,3 +18,11 @@ So it is saying:
 3. Separate each column with a tab (the OFS didn't seem to work without it, so it may be irrelevant in the script above)
 4. Print columns 1, 2 and 3 after the last column printed. Again, with tabs between them.
 
+## Replace multiple spaces, or tabs etc with a single one:
+```
+# Replace two or more tabs with a single tab. 
+sed 's/\t\+/\t/g' header_ratio > header_new
+
+# Replace two or more spaces with a single tab:
+sed 's/ \+/\t/g' header_ratio > header_new
+```
