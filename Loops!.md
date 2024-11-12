@@ -9,3 +9,17 @@ samtools faidx /nfs/users/nfs_j/jm62/scratch/Orthofinder/proteomes/WBPS18_Tci2_w
 
 done
 ```
+
+OR if you've made a list of files... 
+```
+ls EEID_AR_ORDER_*/*/EEID*/demultiplexed/forDADA* | grep -v 'unknown' | grep -v 'EEID_AR_ORDER_2' | grep -v 'R_C_' | sort | uniq > list_loci
+
+sed 's/R1_001.fastq//g' list_loci | sed 's/R2_001.fastq//g' | sort | uniq > tmp
+
+mv tmp list_loci.txt
+
+while read NAME;
+do
+fastq_pair ${i}R1_001.fastq ${i}R2_001.fastq ;
+done < list_loci.txt
+```
