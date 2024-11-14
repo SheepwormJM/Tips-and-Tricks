@@ -14,7 +14,20 @@ cat file | sort -k 4 -n | nl > new_file
 awk 'BEGIN {FS=OFS="\t"} {print $0, ($2 + 50000), "IVM"}' myfile > myfile_with_IVM_in_new_last_column
 ```
 
-3. In R, using _paste_:
+2. In R, using _paste_:
 ```
 df9$addMe <- paste0("text to add", df9$addMe)
+```
+
+# Add file name to files:
+To get the filename in the first column of the file and to then cat (stick) lots of files together one after the other but without needing to write all the names...
+```
+for i in MEAN* ;
+do
+awk 'NR==1{print "file_name",$0;next} {print FILENAME , $0}' ${i} > tmp_${i} ;
+done
+
+mkdir MEAN_Pi
+mv tmp* MEAN_Pi
+cat MEAN_Pi/* > MEAN_Pi_chr_locus
 ```
