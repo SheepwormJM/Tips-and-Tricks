@@ -1,5 +1,5 @@
 ```
-df<-read.table("MHco20.19.F3_dummyGT.txt", header=T, sep="\t")
+df<-read.table("MHco_dummyGT.txt", header=T, sep="\t")
 summary(df)
 
 # Let's make Genotype_resistance, Boma and Month a factor not a character. And manually order the levels (for plotting):
