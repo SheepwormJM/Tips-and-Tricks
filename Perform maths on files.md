@@ -14,3 +14,5 @@ do
 done &
 ```
 (Note, the columns in the sync were made by popoolation2 - the four bases, then N, then deletions).
+
+Got the idea from here: https://www.theunixschool.com/2012/09/find-sum-all-numbers-columns-in-line-linux.html which has other simple tips too.
