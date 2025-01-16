@@ -19,3 +19,7 @@ NR==1 {
 { print $(f["foo"]), $(f["baz"]) }
 ' file
 ```
+3. Using grep to pull out lines containing a string match:
+```
+grep -e 'keep' file.txt > new_file.txt
+```
