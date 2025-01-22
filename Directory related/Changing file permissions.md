@@ -1,5 +1,6 @@
 # Permissions: 
 https://linuxhandbook.com/linux-file-permissions/ 
+
 https://linuxhandbook.com/content/images/2020/06/file-permission-explanation-2-1.png![image](https://github.com/user-attachments/assets/897004a3-40c0-48d4-b02a-451eb8cc3a0a)
 
 
