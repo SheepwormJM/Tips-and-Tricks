@@ -10,6 +10,13 @@ sed 's/.*\///g' list_loci.txt | sed 's/_BTUB.*//g' > out
 # The next removes _BTUB and anything after it (.*)
 ```
 
+Note, when copy and paste, or with some files, get multiple spaces, not a tab (check with cat -T). To replace multiple spaces with a single space and then all single spaces with a tab do the following: 
+
+```
+sed 's/  */ /g' filename | sed 's/ /\t/g' > new_filename
+```
+
+
 ## In R, can use gsub: 
 ```
 # gsub https://endmemo.com/r/gsub.php
