@@ -13,6 +13,7 @@ sed 's/.*\///g' list_loci.txt | sed 's/_BTUB.*//g' > out
 Note, when copy and paste, or with some files, get multiple spaces, not a tab (check with cat -T). To replace multiple spaces with a single space and then all single spaces with a tab do the following: 
 
 ```
+# Note that there are TWO spaces in the first one!
 sed 's/  */ /g' filename | sed 's/ /\t/g' > new_filename
 ```
 
