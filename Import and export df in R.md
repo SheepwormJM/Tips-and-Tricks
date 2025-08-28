@@ -1,3 +1,7 @@
+To import:
+```
+df<-read.table("filename.txt", header=T, sep="\t", na.strings = "nan")
+```
 
 To export: 
 ```
