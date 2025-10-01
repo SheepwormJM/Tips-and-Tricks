@@ -1,3 +1,28 @@
+## Loop through rows and average
+
+```
+# This following script (obtained from https://unix.stackexchange.com/questions/396335/averaging-over-many-rows-of-data) will output the average for the number of rows N.
+# If there are fewer than N rows left (the NR % N ==0) bit then it will not put out anything for those lines. So, if I select it to average over 1000 rows, then it would ignore the last 999 rows of data (or less).
+ 
+awk '
+BEGIN {
+    N = 10000;
+}
+{
+    for(i = 1; i <= NF; i++) {
+        arr[i] += $i;   
+    }
+}
+NR % N == 0 {
+    for(i = 1; i <= NF; i++) {
+        printf "%s ", arr[i] / N;
+    }
+    print "";
+    delete arr;
+
+}' tmp > new_tmp
+```
+
 ## How to get a sum of mpileup sync counts by line
 
 This script will do the following:
