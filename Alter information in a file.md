@@ -25,3 +25,24 @@ sed 's/  */ /g' filename | sed 's/ /\t/g' > new_filename
 
 win_melt_FA$variable.new<-gsub("FA.FB_C_L","CTL", win_melt_FA$variable.new)
 ```
+
+# Awk with if and else, not tested:
+```
+awk '{OFS="\t"}
+{ if ($3=="gene"){
+    gsub("^","gene_id=",$9);
+    gsub("$",";",$9);
+    #print
+} else if($3=="transcript"){
+    geneID=$9;
+    transcriptID=$9;
+    gsub("..*",";",geneID);
+    gsub("^","gene_id=",geneID);
+    gsub("^","transcript_id=",transcriptID);
+    $9=geneID" "transcriptID";";
+    print $9
+} else {
+    print
+} 
+}'
+```
