@@ -12,4 +12,13 @@ gffread -g Genome.fa -y ProteinsOutput.fa YourGFF.gff
 gffread -g ./REF.fa -y TtTr.fasta Tt.gff3
 
 sed 's/CM052060\.1/Ttru_Chr1/g' GCA_028476895.1_ASM2847689v1_genomic.fna | sed 's/CM052061\.1/Ttru_Chr2/g' | sed 's/CM052062\.1/Ttru_Chr3/g' > REF.fa
+
+
+# Downloaded files from ORCAE
+tar xf Aculy_gff3_20200924.tar.gz
+# Extracts all scaffolds separately.
+# To combine...
+cat scaf*gff3 | grep -v '##' > Aculy.gff3
+
+gffread -g Aculy_genome.fa -y AcLy.fasta Aculy.gff3
 ```
