@@ -1,3 +1,4 @@
+From https://unix.stackexchange.com/questions/561577/awk-print-from-nth-column-to-last
 ```
 awk '{$1=$2=$3=""; $0=$0; $1=$1; print}' file
 ```
