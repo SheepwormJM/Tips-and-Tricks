@@ -1,10 +1,17 @@
 ## Rename!
 
 ```
-rename old_text new_text files
+rename [options] old_text new_text files
 
 # The below will rename all .fastq files that have F1R1 in them - replacing the first occurance of F1R1 with Sample1
 rename F1R1 Sample1  *.fastq
+
+# Here's a way to do it with a loop
+for i in {1..3} ;
+do
+rename -o .fq.gz .fq 1000_reads_Sample_0${i}_adapREV_rem_PE.1.fq.gz ;
+done
+# Note - -o is to not overwrite existing files. It will not make a copy of your file, but presumably, if the new filename already exists it will not overwrite it. 
 ```
 ## Move...
 Can use the ```mv``` to rename. 
