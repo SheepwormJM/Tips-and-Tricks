@@ -23,3 +23,14 @@ do
 fastq_pair ${i}R1_001.fastq ${i}R2_001.fastq ;
 done < list_loci.txt
 ```
+
+Another loop within a loop:
+```
+for j in {1..2} ;
+do
+for i in {1..3} ;
+do
+ln -s 1000_reads_Sample_0${i}_adapREV_rem_PE.${j}.fa ;
+done ;
+done
+```
